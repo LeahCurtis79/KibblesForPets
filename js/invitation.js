@@ -1,5 +1,6 @@
 //function created to replace content
-function func1() {
+function replaceContent() {
+    
 //declare variables
 var myReciepientName;
 var hostName;
