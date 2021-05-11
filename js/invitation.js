@@ -2,12 +2,12 @@
 function replaceContent() {
     
 //declare variables
-var myReciepientName;
+var myRecipientName;
 var hostName;
 
 //set the variable to the input field's id named recipientNameInput's value
 
-    myReciepientName = document.getElementById('myRecipientNameInput').Value;
+    myRecipientName = document.getElementById('myRecipientNameInput').Value;
     hostname = document.getElementById('hostNameInput').Value;
     document.getElementById('myRecipientNamePlaceholder').innerHTML=myRecipientName;
     console.log('Variable myRecipientName: + myRecipientName');
