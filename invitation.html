@@ -6,9 +6,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     
     <script>
-        function func1()
+        function func()
 {
-    document.getElementById("recipientName").textcontent=document.querySelector('input[name=recipientName]').value;
+    document.getElementById("recipientName").textContent=document.querySelector('input[name=recipientName]').value;
     document.getElementById("organizationName").textContent+document.querySelector('input[name=eventDate]').value;
     document.getElementById("eventDate").textContent=document.querySelector('input[name=eventDate]').value;
     document.getElementById("websiteURL").textContent=document.querySelector('input[name=websiteURL]').value;
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="js/invitation.js"></script>
+    <script type="text/javascript" src="invitation.js"></script>
     <header>
         <div class="top">
             <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
@@ -39,7 +39,7 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#" onsubmit="return func1()">
+        <form action="#" onsubmit="return func ()">
             <label for="recipientName">Recipient name:</label>
             <input type="text" name="recipientName" placeholder="Enter your Recipient Name" />
 
