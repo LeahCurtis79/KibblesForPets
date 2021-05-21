@@ -6,10 +6,10 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     
     <script>
-        function func()
+        function func1()
 {
     document.getElementById("recipientName").textContent=document.querySelector('input[name=recipientName]').value;
-    document.getElementById("organizationName").textContent+document.querySelector('input[name=eventDate]').value;
+    document.getElementById("organizationName").textContent=document.querySelector('input[name=eventDate]').value;
     document.getElementById("eventDate").textContent=document.querySelector('input[name=eventDate]').value;
     document.getElementById("websiteURL").textContent=document.querySelector('input[name=websiteURL]').value;
     document.getElementById("hostName").textContent=document.querySelector('input[name=hostName]'.value);
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <script type="text/javascript" src="invitation.js"></script>
+    <script type="text/javascript" src="js/invitation.js"></script>
     <header>
         <div class="top">
             <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
@@ -29,6 +29,8 @@
                 <li><a href="index.html">Home</a>
                 </li>
                 <li><a href="invitation.html" class="active">Invitation</a>
+                </li>   
+                <li><a href="volunteers.html" class="active">Volunteers</a>
                 </li>
                 <li><a href="gallery.html">Gallery</a>
                 </li>
@@ -39,7 +41,7 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#" onsubmit="return func ()">
+        <form action="#" onsubmit="return func1()">
             <label for="recipientName">Recipient name:</label>
             <input type="text" name="recipientName" placeholder="Enter your Recipient Name" />
 
