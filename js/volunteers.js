@@ -12,13 +12,13 @@ var displayVolunteers = function () {
 
 var addVolunteer = function () {
     //get the data from the form
-    var volunteerString = $("first_name").value + " " + $("last_name"),value;
+    var volunteerString = $("first_name").value + " " + $("last_name").value;
 
     //store the data in an array
     volunteerArray.push(volunteerString);
     
-    //display the volunteers and clear the add form
     displayVolunteers();
+    //display the volunteers and clear the add form
 
     //get the add form ready for next entry
     $("first_name").value = "";
@@ -35,9 +35,13 @@ var deleteVolunteer = function () {
     
     //remove the string from the array (hint, loop the entire list, compare the string with the item in the array).
 
-    var volunteerArray = $("first_name").value + " " + $("last_name"),value;
-    var remove = volunteerArray.splice $("first_name").value + " " + $("last_name").value;
+    for (i = 0; i < volunteerArray.length; i++) {
 
+        if (volunteerString === volunteerArray (i)) {
+
+            volunteerArray.splice(i);
+        }
+    }
 
     //display the volunteers and clear the add form
     displayVolunteers();
