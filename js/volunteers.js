@@ -16,6 +16,9 @@ var addVolunteer = function () {
 
     //store the data in an array
     volunteerArray.push(volunteerString);
+    
+    //display the volunteers and clear the add form
+    displayVolunteers();
 
     //get the add form ready for next entry
     $("first_name").value = "";
