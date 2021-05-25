@@ -4,7 +4,7 @@ var volunteerArray = [];
 
 var displayVolunteers = function () {
     //display the volunteers in the text area
-    $("VolunteerList").value = volunteerArray.join("\n");
+    document.getElementById("VolunteerList").value = volunteerArray.join("\n");
 
     //comment out the line above change this to a loop instead to a loop through the array
 
@@ -35,12 +35,13 @@ var deleteVolunteer = function () {
     
     //remove the string from the array (hint, loop the entire list, compare the string with the item in the array).
 
-    for (i = 0; i < volunteerArray.length; i++) {
+    for (i = volunteerArray.length-1; i >= 0; i--) {
 
-        if (volunteerString === volunteerArray (i)) {
+        if (volunteerArray[i] === volunteerDelete) {
 
-            volunteerArray.splice(i);
+            volunteerArray.splice(i, 1);
         }
+    
     }
 
     //display the volunteers and clear the add form
@@ -55,7 +56,7 @@ var deleteVolunteer = function () {
 
 var clearList = function (){
     //delete the data from the arrays
-    volunteerArray = [];
+    volunteerArray.length = 0;
 
     // alternative way to delete all the data from the array
     // volunteerArray.length = 0;
@@ -74,6 +75,24 @@ var sortList = function () {
     //display the scores
     displayVolunteers();
 };
+
+function userInputs(){
+
+    let orgName = $("organizationName").value;
+    let date = $("eventDate").value;
+    let url = $("wevisteURL").value;
+    let host = $("hostName").value;
+
+    var html = "";
+
+    for (recipientName of volunteerArray) {
+
+        html =+ <p>Hello ${recipientName}!
+        <br/>
+        <br/> Thanks!
+        ${host}</p>;
+
+    }
 
 //When the page is fully loaded, the buttons will be mapped to the Javascript functions
 window.onload = function (){

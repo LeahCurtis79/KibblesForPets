@@ -2,7 +2,7 @@
 <html lang="en-US">
 
 <head>
-    <title>Invitation Page</title>
+    <title>Volunteer Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
     <script type="text/javascript" src="js.volunteers.js"></script>
 </head> 
@@ -14,11 +14,11 @@
         </div>
         <nav>
             <ul class="topnav">
-                <li><a href="index.html">None</a>
+                <li><a href="index.html">Hone</a>
                 </li>
                 <li><a href="invitation.html">Invitation</a>
                 </li>
-                <li><a href="volunteers.html">Volunteers</a>
+                <li><a href="volunteers.html"="active" >Volunteers</a>
                 </li>
                 <li><a href="gallery.html">Gallery</a>
                 </li>
@@ -29,9 +29,9 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#">
+        <form action="#" onsubmit = "return false">
 
-            <h1>Volunteers</h1>
+            <h1>Create Volunteer List</h1>
             <div>
                 <label for ="first_name">First Name:</label>
                 <input type="text" id="first_name">
@@ -51,8 +51,29 @@
                 <input type="button" id="sort_button" value="Sort By First Name">
             </div>
 
+            <h1> Event Information</h1>
+            <label for="organizationName">Organization Name:</label>
+            <input type="text" id="organizationName" placeholder="Enter your Organization Name" />
+
+            <label for="eventDate">Event Date:</label>
+            <input type="text" id="eventDate" placeholder="Enter your Event Date" />
+
+            <label for="websiteURL">URL:</label>
+            <input type="text" id="websiteURL" placeholder="Enter your Website URL"  />
+
+            <label for="hostName">Host Name:</label>
+            <input type="text" id="hostName" placeholder="Host Name" />
+
+            <br>
+
+            <button onclick="userInputs()" >Submit</button>
+        
+        
         </form>
     </section>
+
+    <article id ="placeholderContent"></article>
+    
     <footer>This events site is for IT3515 tasks.
     </footer>
 
