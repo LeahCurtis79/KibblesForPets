@@ -80,7 +80,7 @@ function userInputs(){
 
     let orgName = $("organizationName").value;
     let date = $("eventDate").value;
-    let url = $("wevisteURL").value;
+    let url = $("wevbsteURL").value;
     let host = $("hostName").value;
 
     var html = "";
@@ -96,9 +96,10 @@ function userInputs(){
 
 //When the page is fully loaded, the buttons will be mapped to the Javascript functions
 window.onload = function (){
+    $("numRecipients_button").onclick = numRecipients;
     $("add_button").onclick = addVolunteer;
     $("delete_button").onclick = deleteVolunteer;
-    $("clear_buttom").onclick = clearList;
+      $("clear_buttom").onclick = clearList;
     $("sort_button").onclick = sortList;
     $("first_name").focus();
 }
