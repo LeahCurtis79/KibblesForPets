@@ -48,7 +48,7 @@ function userInputs(){
     var host = $("hostName").value;
 
     var html = "";
-    // alternative: for (i = volunteerArray.length-1; i >= 0; i--) {
+   
     // loops through array and on every element it performs the function
     for (recipientName of volunteerArray) {
         
@@ -56,4 +56,22 @@ function userInputs(){
         html += `<p>Hello ${recipientName}!
         <br/>
         <br/> You have been invited to volunteer for an event held by ${orgName} on ${date}. Please come to the following website: ${url} to sign up as a volunteer.
-        <br/>
+        <br/>`;
+    };
+
+        // tells where to place the html -- into DOM id "placeholderContent"
+        $("placeholderContent").innerHTML = html;
+
+        // clears the form to get the form ready for next entry
+        $("organizationName").value = "";
+        $("eventDate").value = "";
+        $("websiteURL").value = "";
+        $("hostName").value = "";
+        $("numOfVolunteers").focus();
+    }
+
+        // when page is fully loaded
+        window.onload = function () {
+
+        $("numOfVolunteers").focus();
+        }       
