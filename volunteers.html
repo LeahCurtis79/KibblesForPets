@@ -2,9 +2,9 @@
 <html lang="en-US">
 
 <head>
-    <title>Volunteer Page</title>
+    <title>Volunteers Page</title>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <script type="text/javascript" src="js.volunteers.js"></script>
+   
 </head> 
 
 <body>
@@ -32,35 +32,23 @@
         <form action="#" onsubmit = "return false">
 
             <h1>Create Volunteer List</h1>
-            <div>
+            <div> id = "numOfVolunteersContainer">
                 
-                <label for = "numRecipients">Number of Recipients:</label>
-                <input type ="text" id="numRecipients" 
+                <label for = "numOfVolunteers">Number of Volunteers:</label>
+                <input type ="text" id="numOfVolunteers">
+
+                <input type = "button" id = "add_fields" value= "Add input fields" onclick="addFields();">
                 
 
-                <label for ="first_name">First Name:</label>
-                <input type ="text" id="first_name">
+        </div>
+         <hr>
+         <div id="volunteer_fields">
 
-                <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name">
+         </div>
 
-                <input type="button" id="numRecipients" value="Number of Recipients">
-                <input type="button" id="add_button" value="Add Volunteer">
-                <input type="button" id="delete_button" value="Delete Volunteer">
-            </div>
-            <h2>Volunteer List</h2>
-            <textarea id="volunteerList" rows="10" cols="60"></textarea>
-            <div>
+        <div id= "event_information">
 
-                <input type="button" id="clear_button" value="Clear Volunteers">
-                <input type="button" id="sort_button" value="Sort By First Name">
-            </div>
-
-            <h1> Event Information</h1>
-
-            <label for = "numRecipients">Number of Recipients:</label>
-            <input type ="text" id="numRecipients" placeholder="Enter NUmber of Recipients" />
-
+            <h2> Event Information</h2>
 
             <label for="organizationName">Organization Name:</label>
             <input type="text" id="organizationName" placeholder="Enter your Organization Name" />
@@ -74,19 +62,20 @@
             <label for="hostName">Host Name:</label>
             <input type="text" id="hostName" placeholder="Host Name" />
 
+           <input type= "button" id= "add_button" value= "Submit"  onclick="addVolunteer();">         
             <br>
 
-            <button onclick="userInputs()" >Submit</button>
-        
+           
         
         </form>
+        <hr>
+    </div>
     </section>
-
-    <article id ="placeholderContent"></article>
-    
+    <br>    
     <footer>This events site is for IT3515 tasks.
-    </footer>
 
+    </footer>
+    <script type="text/javascript" src="js/volunteers.js"></script>
 </body>
 
 </html>

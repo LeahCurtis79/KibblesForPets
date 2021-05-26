@@ -1,105 +1,59 @@
-var $ = function (id) { return document.getElementById(id); };
+// function allows coding of "$" in place of "document.getElementById" whereever used
+var $ = function (id){ 
+    return document.getElementById(id);
+};
 
+// initializes array to hold names of volunteers
 var volunteerArray = [];
 
-var displayVolunteers = function () {
-    //display the volunteers in the text area
-    document.getElementById("VolunteerList").value = volunteerArray.join("\n");
+var addFields = function () {
+    var numFields = document.getElementById("numOfVolunteers").value;
+    var htmlField = "<h2>Volunteers List</h2>";
+    for (i = 0; i < numFields; i++) {
+        htmlField += '<label for="volunteerName">Volunteer\'s name:</label><input type="text" class="volunteerName"></br>';
+    }
+    htmlField += '<hr>';
+    $("volunteer_fields").innerHTML = htmlField;
 
-    //comment out the line above change this to a loop instead to a loop through the array
-
+     // clears the form to get the add form ready for next entry
+     $("numOfVolunteers").value = "";
 };
+
 
 var addVolunteer = function () {
-    //get the data from the form
-    var volunteerString = $("first_name").value + " " + $("last_name").value;
-
-    //store the data in an array
-    volunteerArray.push(volunteerString);
+    // creates new variable with first and last name entries from form added together
+    var volunteerNames = document.getElementsByClassName("volunteerName");
     
-    displayVolunteers();
-    //display the volunteers and clear the add form
-
-    //get the add form ready for next entry
-    $("first_name").value = "";
-    $("last_name").value = "";
-    $("first_name").focus();
-
-};
-
-var deleteVolunteer = function () {
-    //get the data from the form (hint: use the same format as from the add).
-
-    var volunteerString = $("first_name").value + " " + $("last_name").value;
-
-    
-    //remove the string from the array (hint, loop the entire list, compare the string with the item in the array).
-
-    for (i = volunteerArray.length-1; i >= 0; i--) {
-
-        if (volunteerArray[i] === volunteerDelete) {
-
-            volunteerArray.splice(i, 1);
-        }
-    
+    // stores in the array
+    for (i = 0; i < volunteerNames.length; i++) {
+        volunteerArray.push(volunteerNames[i].value);
     }
 
-    //display the volunteers and clear the add form
-    displayVolunteers();
+    userInputs();
 
-    //get the data form ready for next entry
-    $("first_name").value = "";
-    $("last_name").value = "";
-    $("first_name").focus();
-    
+    // clears the form to get the add form ready for next entry
+    $("volunteerName").value = "";
 };
 
-var clearList = function (){
-    //delete the data from the arrays
-    volunteerArray.length = 0;
 
-    // alternative way to delete all the data from the array
-    // volunteerArray.length = 0;
 
-    // remove the volunteers data from the web page
-    $("volunteerList").value = "";
-
-    $("first_name").focus();
-
-};
-
-var sortList = function () {
-    //sort the scores
-    volunteerArray.sort();
-
-    //display the scores
-    displayVolunteers();
-};
-
+// takes members of the array and pushes html to the page 
+// html is a form inviting volunteers to an event
 function userInputs(){
 
-    let orgName = $("organizationName").value;
-    let date = $("eventDate").value;
-    let url = $("wevbsteURL").value;
-    let host = $("hostName").value;
+    // takes values from the form fields in "Event Information" and assigns to variables
+    var orgName = $("organizationName").value;
+    var date = $("eventDate").value;
+    var url = $("websiteURL").value;
+    var host = $("hostName").value;
 
     var html = "";
-
+    // alternative: for (i = volunteerArray.length-1; i >= 0; i--) {
+    // loops through array and on every element it performs the function
     for (recipientName of volunteerArray) {
-
-        html =+ <p>Hello ${recipientName}!
+        
+        // creates html message & inserts variables from the form
+        html += `<p>Hello ${recipientName}!
         <br/>
-        <br/> Thanks!
-        ${host}</p>;
-
-    }
-
-//When the page is fully loaded, the buttons will be mapped to the Javascript functions
-window.onload = function (){
-    $("numRecipients_button").onclick = numRecipients;
-    $("add_button").onclick = addVolunteer;
-    $("delete_button").onclick = deleteVolunteer;
-      $("clear_buttom").onclick = clearList;
-    $("sort_button").onclick = sortList;
-    $("first_name").focus();
-}
+        <br/> You have been invited to volunteer for an event held by ${orgName} on ${date}. Please come to the following website: ${url} to sign up as a volunteer.
+        <br/>
