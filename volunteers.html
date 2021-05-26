@@ -2,80 +2,79 @@
 <html lang="en-US">
 
 <head>
-    <title>Volunteers Page</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-   
-</head> 
+	<title>Volunteers Page</title>
+	 <link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
 
 <body>
-    <header>
-        <div class="top">
-            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-        </div>
-        <nav>
-            <ul class="topnav">
-                <li><a href="index.html">Hone</a>
-                </li>
-                <li><a href="invitation.html">Invitation</a>
-                </li>
-                <li><a href="volunteers.html"="active" >Volunteers</a>
-                </li>
-                <li><a href="gallery.html">Gallery</a>
-                </li>
-                <li> <a href="registration.html">Registration</a>
-                </li>
-            </ul>
+	<header>
+		<div class="top">
+			<a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+		</div>
+		<nav>
+			<ul class="topnav">
+				<li><a href="index.html">Home</a>
+				</li>
+				<li><a href="invitation.html">Invitation</a>
+				</li>
+				<li><a href="volunteer.html" class="active">Volunteers</a>
+				</li>
+				<li><a href="gallery.html">Gallery</a>
+				</li>
+				<li><a href="registration.html">Registration</a>
+				</li>
+			</ul>
+		</nav><
+	</header>
 
-        </nav>
-    </header>
-    <section id="pageForm">
-        <form action="#" onsubmit = "return false">
+	<section id="pageForm">
+		<form action="#" onsubmit="return false">
+			<h1>Build Volunteer List</h1>
 
-            <h1>Create Volunteer List</h1>
-            <div> id = "numOfVolunteersContainer">
-                
-                <label for = "numOfVolunteers">Number of Volunteers:</label>
-                <input type ="text" id="numOfVolunteers">
+			<div id="numOfVolunteersContainer">
+				<label for="numOfVolunteers">Number of volunteers:</label>
+				<input type="text" id="numOfVolunteers">
 
-                <input type = "button" id = "add_fields" value= "Add input fields" onclick="addFields();">
-                
+				<input type="button" id="add_fields" value="Add input fields" onclick="addFields();">
+			</div>
+			<hr>
 
-        </div>
-         <hr>
-         <div id="volunteer_fields">
+			<div id="volunteer_fields">
 
-         </div>
 
-        <div id= "event_information">
+			</div>
 
-            <h2> Event Information</h2>
+			<div id="event_information">
 
-            <label for="organizationName">Organization Name:</label>
-            <input type="text" id="organizationName" placeholder="Enter your Organization Name" />
+				<h2>Event Information</h2>
+				<label for="organizationName">Organization name:</label>
+				<input type="text" id="organizationName" placeholder="Enter your Organization Name" />
 
-            <label for="eventDate">Event Date:</label>
-            <input type="text" id="eventDate" placeholder="Enter your Event Date" />
+				<label for="eventDate">Event Date:</label>
+				<input type="text" id="eventDate" placeholder="Enter your Event Date" />
 
-            <label for="websiteURL">URL:</label>
-            <input type="text" id="websiteURL" placeholder="Enter your Website URL"  />
+				<label for="websiteURL">URL:</label>
+				<input type="text" id="websiteURL" placeholder="Enter your Website URL" />
 
-            <label for="hostName">Host Name:</label>
-            <input type="text" id="hostName" placeholder="Host Name" />
+				<label for="hostName">Host name:</label>
+				<input type="text" id="hostName" placeholder="Host Name" />
+				<br>
 
-           <input type= "button" id= "add_button" value= "Submit"  onclick="addVolunteer();">         
-            <br>
+				<input type="button" id="add_button" value="Submit" onclick="addVolunteer();">
 
-           
-        
-        </form>
-        <hr>
-    </div>
-    </section>
-    <br>    
-    <footer>This events site is for IT3515 tasks.
+			</div>
 
-    </footer>
-    <script type="text/javascript" src="js/volunteers.js"></script>
+		</form>
+
+		<hr>
+		<div id="placeholderContent">
+
+		</div>
+	</section>
+	<br>
+	<footer>
+		This events site is for IT3215 tasks.
+	</footer>
+	<script type="text/javascript" src="js/volunteers.js"></script>
 </body>
-
 </html>
