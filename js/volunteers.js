@@ -48,7 +48,7 @@ function userInputs(){
     var host = $("hostName").value;
 
     var html = "";
-   
+    // alternative: for (i = volunteerArray.length-1; i >= 0; i--) {
     // loops through array and on every element it performs the function
     for (recipientName of volunteerArray) {
         
@@ -56,22 +56,35 @@ function userInputs(){
         html += `<p>Hello ${recipientName}!
         <br/>
         <br/> You have been invited to volunteer for an event held by ${orgName} on ${date}. Please come to the following website: ${url} to sign up as a volunteer.
-        <br/>`;
-    };
-
-        // tells where to place the html -- into DOM id "placeholderContent"
-        $("placeholderContent").innerHTML = html;
-
-        // clears the form to get the form ready for next entry
-        $("organizationName").value = "";
-        $("eventDate").value = "";
-        $("websiteURL").value = "";
-        $("hostName").value = "";
-        $("numOfVolunteers").focus();
+        <br/>
+        <br/> Thanks!
+        ${host}</p><br><br>`;
+                    
     }
 
-        // when page is fully loaded
-        window.onload = function () {
+    // tells where to place the html -- into DOM id "placeholderContent"
+    $("placeholderContent").innerHTML = html;
 
-        $("numOfVolunteers").focus();
-        }       
+    // clears the form to get the form ready for next entry
+    $("organizationName").value = "";
+    $("eventDate").value = "";
+    $("websiteURL").value = "";
+    $("hostName").value = "";
+    $("numOfVolunteers").focus();
+}
+
+// when page is fully loaded
+window.onload = function () {
+    
+    $("numOfVolunteers").focus();
+}
+
+//This Field is where I execute the 'Add input Field' button with the Enter key
+var input = document.getElementById("numOfVolunteers");
+input.addEventListener("keyup",function(event) {
+    //Number 13 is the ENTER key
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("add_fields").click();
+    }
+});
