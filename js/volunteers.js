@@ -31,15 +31,8 @@ var addVolunteer = function () {
 
     userInputs();
    
-    // clears the form to get the add form ready for next entry
-    //$("volunteerName").value = "";
-
-    var frm = document.getElementById('volunteerName') [0];
-    frm.reset();
-    return false;
-
-
-};
+    
+  };
 
 
 
