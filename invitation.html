@@ -2,84 +2,82 @@
 <html lang="en-US">
 
 <head>
-    <title>Invitation Page</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css" />
-    
-    <script>
-        function func1()
-{
-    document.getElementById("recipientName").textContent=document.querySelector('input[name=recipientName]').value;
-    document.getElementById("organizationName").textContent=document.querySelector('input[name=eventDate]').value;
-    document.getElementById("eventDate").textContent=document.querySelector('input[name=eventDate]').value;
-    document.getElementById("websiteURL").textContent=document.querySelector('input[name=websiteURL]').value;
-    document.getElementById("hostName").textContent=document.querySelector('input[name=hostName]').value;
-    return false;
-}
-    </script>
+	<title>Volunteers Page</title>
+	 <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
 <body>
-    <script type="text/javascript" src="js/invitation.js"></script>
-    <header>
-        <div class="top">
-            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-        </div>
-        <nav>
-            <ul class="topnav">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li><a href="invitation.html" class="active">Invitation</a>
-                </li>   
-                <li><a href="volunteers.html">Volunteers</a>
-                </li>
-                <li><a href="gallery.html">Gallery</a>
-                </li>
-                <li><a href="registration.html">Registration</a>
-                </li>
-            </ul>
+	<header>
+		<div class="top">
+			<a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+		</div>
+		<nav>
+			<ul class="topnav">
+				<li><a href="index.html">Home</a>
+				</li>
+				<li><a href="invitation.html">Invitation</a>
+				</li>
+				<li><a href="volunteer.html" class="active">Volunteers</a>
+				</li>
+				<li><a href="gallery.html">Gallery</a>
+				</li>
+				<li><a href="registration.html">Registration</a>
+				</li>
+			</ul>
+		</nav>
+	</header>
 
-        </nav>
-    </header>
-    <section id="pageForm">
-        <form action="#" onsubmit="return func1()">
-            <label for="recipientName">Recipient name:</label>
-            <input type="text" name="recipientName" placeholder="Enter your Recipient Name" />
+	<section id="pageForm">
+		<form action="#" onsubmit="return false">
+			<h1>Build Volunteer List</h1>
 
-            <label for="organizationName">Organization name:
-            </label>
-            <input type="text" name="organizationName" placeholder="Enter your Organization Name" />
+			<div id="numOfVolunteersContainer">
+				<label for="numOfVolunteers">Number of volunteers:</label>
+				<input type="text" id="numOfVolunteers">
 
-            <label for="eventDate">Event Date:
-            </label>
-            <input type="text" name="eventDate" placeholder="Enter your Event Date" />
+				<input type="button" id="add_fields" value="Add input fields" onclick="addFields();">
 
-            <label for="websiteURL">URL:
-            </label>
-            <input type="text" name="websiteURL" placeholder="Enter your Website URL" />
+				<document class="addEventListener">
+			</div>
+			<hr>
 
-            <label for="hostName">Host name:
-            </label>
-            <input type="text" name="hostName" placeholder="Host Name" />
-
-            <input type="submit" value="Submit">
-        </form>
-    </section>
+			<div id="volunteer_fields">
 
 
-    <article id="placeholderContent">
-        Hello <span id="recipientName">recipientName</span>!
-        <br/>
-        <br/> You have been invited to volunteer for an event held by <span id="organizationName">organizationName</span> on <span id="eventDate">eventDate</span>. Please come to the following website: <span id="websiteURL">websiteURL</span> to sign up as a volunteer.
-        <br/>
-        <br/> Thanks!
-        <br/>
-        <br/>
-        <span id="hostName">hostName</span>
-    </article>
-    <footer>This events site is for IT-FP3215 tasks.
-    </footer>
+			</div>
 
-    
+			<div id="event_information">
+
+				<h2>Event Information</h2>
+                
+				<label for="organizationName">Organization name:</label>
+				<input type="text" id="organizationName" placeholder="Enter your Organization Name" />
+
+				<label for="eventDate">Event Date:</label>
+				<input type="text" id="eventDate" placeholder="Enter your Event Date" />
+
+				<label for="websiteURL">URL:</label>
+				<input type="text" id="websiteURL" placeholder="Enter your Website URL" />
+
+				<label for="hostName">Host name:</label>
+				<input type="text" id="hostName" placeholder="Host Name" />
+				<br>
+
+				<input type="button" id="add_button" value="Submit" onclick="addVolunteer();">
+
+			</div>
+
+		</form>
+
+		<hr>
+		<div id="placeholderContent">
+
+		</div>
+	</section>
+	<br>
+	<footer>
+		This events site is for IT3215 tasks.
+	</footer>
+	<script type="text/javascript" src="js/volunteers.js"></script>
 </body>
-
 </html>
