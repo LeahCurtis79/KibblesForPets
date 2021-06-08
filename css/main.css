@@ -140,3 +140,27 @@ div.desc {
     padding: 15px;
     text-align: center;
 }
+
+.image{
+	width:336px;
+	height:280px;
+}
+
+.over{
+	width:300px !important;
+	z-index:1000 !important;
+	position: absolute;
+	margin-left:-60px;
+}
+
+.first{
+	margin-left:0;
+}
+
+.separator{
+	margin-top:10px;
+}
+
+hr{
+	color:gray;
+}
