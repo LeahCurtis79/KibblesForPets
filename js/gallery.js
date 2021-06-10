@@ -1,5 +1,5 @@
 (function() {
-	[...document.querySelectorAll("img")].forEach(item=>{
+	[...document.querySelectorAll("img")].forEach(item=> {
 		item.onmouseover = () => { 
 			item.classList.add('over'); 
 		}
