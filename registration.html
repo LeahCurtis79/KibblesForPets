@@ -29,7 +29,7 @@
     <section id="pageForm">
         <form action="index.html" onsubmit="validate(event)">
             <label for="userName">Username:</label>
-            <input type="text" name="userName" placeholder="Enter your Username using numbers and letters." onblur="validatUserName(event)"/>
+            <input type="text" name="userName" placeholder="Enter your Username." onblur="validatUserName(event)"/>
 
             <label for="Password">Password:
             </label>
@@ -48,10 +48,10 @@
             <input type="text" name="lastName" placeholder="Enter your Last Name" onblur="validateLastName(event)" />
             <label for="email">Email:
             </label>
-            <input type="text" name="email" placeholder="Must be same number of characters as XXX@XXX.XXX" onblur="validateEmail(event)" />
+            <input type="text" name="email" placeholder="Use Character format  XXX@XXX.XXX" onblur="validateEmail(event)" />
 			<label for="phoneNumber">Phone Number
             </label>
-            <input type="text" name="phoneNumber" placeholder="Use the form (###) ###-####." onblur="validatePhone(event)" style="margin-bottom: 20px;" />
+            <input type="text" name="phoneNumber" placeholder="Use the format (###) ###-####." onblur="validatePhone(event)" style="margin-bottom: 20px;" />
 			<label for="signUpNewsletter">Sign up for newsletter:
             </label>
             <div class="last-section-form">
