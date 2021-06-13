@@ -3,13 +3,13 @@ function fieldIsRequired(){
 
     // variable to hold value of alert.
     let flag=0;
-    // defines inputs as all data from the HTML form tag, besides the submit button.
+    // defines inputs as all data from the HTML form tag, except the submit button.
     let inputs = document.querySelectorAll("form > input:not([type='submit'])");
 
     // loops through all form fields to see if they are empty or null
     for(let i=0;i<inputs.length;i++){
             if(inputs[i].value=='' || inputs[i]==null){
-                //if condition is not met, produces an error message with the following style
+                //error message when conditon is not met
                 let span=document.createElement('span');
                 span.innerText=`${inputs[i].name} cannot be empty.`;
                 span.classList.add('error')
@@ -27,7 +27,7 @@ function fieldIsRequired(){
 }
 
 function validate(event){
-    // log for testing purposes
+    // log to test
     console.log('validate function is executing')
     event.preventDefault();
     
@@ -80,13 +80,13 @@ function validatePassword(event){
     }
 }
 
-// used method from javatpoint
+// used method from W3schools
 function validateVerifyPassword(event){
     let vPasswordValue=event.target.value;
     let passwordValue=document.querySelector('input[name="password"]').value;
     let vPasswordError=undefined;
 
-    // simple NOT operator to compare passwords
+    // Compare passwords
     if(passwordValue!==vPasswordValue){
         vPasswordError=document.createElement('span');
         vPasswordError.innerText='Both passwords must match.';
@@ -105,7 +105,7 @@ function validateVerifyPassword(event){
     }
 }
 
-// used method in stackoverflow answer
+// got method from stackoverflow answer
 function validateFirstName(event){
     const regex=/^[A-Za-z]+$/;
 
@@ -156,7 +156,7 @@ function validateLastName(event){
 
 function validateEmail(event){
     
-    // sets length of emails allowed. Must be 3 letters/numbers before and after @ character.
+    // sets length of emails allowed. Should be 3 letters/numbers before and after @ character.
     let regex=/[a-z0-9]{3}@[a-z0-9]{3}.com/;
     let emailError=document.createElement('span');
     emailError.style.color='red';
@@ -176,7 +176,7 @@ function validateEmail(event){
         event.target.after(emailError);
     }
 }
-// couldn't get value.match method to work. Reworked stackoverflox regex method to solve. 
+//  value.match method would not work.found solution from stackoverflox  
 function validatePhone(event){
 
     let regex=/\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}/;
