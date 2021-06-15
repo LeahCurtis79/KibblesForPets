@@ -80,7 +80,7 @@ function validatePassword(event){
     }
 }
 
-// used method from W3schools
+// used method from stackoverflow
 function validateVerifyPassword(event){
     let vPasswordValue=event.target.value;
     let passwordValue=document.querySelector('input[name="password"]').value;
