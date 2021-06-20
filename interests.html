@@ -3,6 +3,7 @@
 
 <head>
     <title>Interests Page</title>
+	<meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
 </head>
 
@@ -26,27 +27,55 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="#">
+        <form action="confirm.html" method="">
 			
             <!--
 			Include other form fields here
 			
 			-->
-            <input type="hidden" name="userName"/>
-            <input type="hidden" name="password"/>
-            <input type="hidden" name="passwordVerify" />
-            <input type="hidden" name="firstName" />
-            <input type="hidden" name="lastName" />
-            <input type="hidden" name="email"/>
-            <input type="hidden" name="lastName" />
-			<input type="hidden" name="signUpNewsletter"/ >
+            <input type="hidden" id="userName" name="userName"/>
+            <input type="hidden" id="password" name="password"/>
+            <input type="hidden" id="passwordVerify" name="passwordVerify" />
+            <input type="hidden" id="firstName" name="firstName" />
+            <input type="hidden" id="lastName" name="lastName" />
+            <input type="hidden" id="email" name="email"/>
+            <input type="hidden" id="phone" name="phone" />
+			<!--<input type="hidden" name="signUpNewsletter"/ >-->
 			
-            <input type="submit" value="Register">
+			<div class="separator">
+				<label for="userName">Interests:</label>
+				<input type="checkbox" id="interestMusic" name="interestMusic" />
+				<label for="interestMusic"> Music</label>
+				<input type="checkbox" id="interestSports" name="interestSports" />
+				<label for="interestSports"> Sports</label>
+				<input type="checkbox" id="interestComputers" name="interestComputers" />
+				<label for="interestComputers"> Computers</label>
+			</div>
+			<hr>
+			<div class="separator">
+				<label for="signUpNewsletter">Sign up for newsletter: 
+				</label>
+				<input type="radio" id="signUpYes" name="signUpNewsletter" value="Yes" checked> Yes 
+				<input type="radio" id="signUpNo" name="signUpNewsletter" value="No"> No 
+			</div>
+			<hr>
+			<div class="separator">
+				<label for="refby">Comments:</label>
+				<textarea id="comments" name="comments" rows="4" cols="50"></textarea> 
+			</div>
+			
+			<div class="separator">
+				<label for="refby">Referred by: </label> <br>
+				<input type="text" id="refby" name="refby" placeholder="Enter the name of the referrer" /> 
+			</div>
+		
+            <input type="submit" value="Register" onclick="saveData()">
         </form>
     </section>
 
     <footer>This events site is for IT-FP3215 tasks.
     </footer>
+	<script src="js/interests.js"></script>
 </body>
 
 </html>
