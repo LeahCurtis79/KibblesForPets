@@ -1,16 +1,9 @@
-//function created to replace content
-function replaceContent() {
-    
-//declare variables
-var myRecipientName;
-var hostName;
-
-//set the variable to the input field's id named recipientNameInput's value
-
-    myRecipientName = document.getElementById('myRecipientNameInput').Value;
-    hostname = document.getElementById('hostNameInput').Value;
-    document.getElementById('myRecipientNamePlaceholder').innerHTML=myRecipientName;
-    console.log('Variable myRecipientName: + myRecipientName');
-    console.log('Variable hostName: + hostName');
-    
+function userInputs()
+{
+    document.getElementById("recipientName").textContent=document.querySelector('input[name=recipientName]').value;
+    document.getElementById("organizationName").textContent=document.querySelector('input[name=organizationName]').value;
+    document.getElementById("eventDate").textContent=document.querySelector('input[name=eventDate]').value;
+    document.getElementById("websiteURL").textContent=document.querySelector('input[name=websiteURL]').value;
+    document.getElementById("hostName").textContent=document.querySelector('input[name=hostName]').value;
+    return false;
 }

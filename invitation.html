@@ -1,81 +1,82 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" >
 
 <head>
-	<title>Volunteers Page</title>
-	 <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <meta charset="utf-8">
+    <title>Invitation Page</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script type="text/javascript" src="js/volunteers.js"></script>
 </head>
 
 <body>
-	<header>
-		<div class="top">
-			<a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
-		</div>
-		<nav>
-			<ul class="topnav">
-				<li><a href="index.html">Home</a>
-				</li>
-				<li><a href="invitation.html">Invitation</a>
-				</li>
-				<li><a href="gallery.html">Gallery</a>
-				</li>
-				<li><a href="registration.html">Registration</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
+    <header>
+        <div class="top">
+            <a class="logo" href="index.html">CapellaVolunteers<span class="dotcom">.org</span></a>
+        </div>
+        <nav>
+            <ul class="topnav">
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="invitation.html" class="active">Invitation</a>
+                </li>
+                <li><a href="gallery.html">Gallery</a>
+                </li>
+                <li><a href="registration.html">Registration</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-	<section id="pageForm">
-		<form action="#" onsubmit="return false">
-			<h1>Build Volunteer List</h1>
+    <section id="pageForm">
+        <form action="#" onsubmit="addFields(); return false">
+            <h1>Build Volunteer List</h1>
+            
+            <label for="numOfVolunteers">Number of volunteers:</label>
+            <input type="text" id="numOfVolunteers" placeholder="Enter a number between 1 and 10...">
 
-			<div id="numOfVolunteersContainer">
-				<label for="numOfVolunteers">Number of volunteers:</label>
-				<input type="text" id="numOfVolunteers">
+            <!--<input type="button" id="add_fields" value="Add input fields">-->
+            
+            <!--<input type="button" id="add_button" value="Add Volunteer">-->
+            <!--<input type="button" id="delete_button" value="Delete Volunteer">-->
 
-				<input type="button" id="add_fields" value="Enter" onclick="addFields();">
+            <!--<h2>Volunteer List</h2>
+            <textarea id="volunteerList" rows="10" cols="60"></textarea>
+            <br>
+            <input type="button" id="clear_button" value="Clear Volunteers">
+            <input type="button" id="sort_button" value="Sort By First Name">-->   
+            <div id="volunteer_fields"></div>
+            <br>
+        </form>
+        <form action="#" onsubmit="return false">
+            
+            <h1>Event Information</h1>
+            <label for="organizationName">Organization name:
+            </label>
+            <input type="text" id="organizationName" placeholder="Enter your Organization Name" />
 
-				<document class="addEventListener">
-			</div>
-			<hr>
+            <label for="eventDate">Event Date:
+            </label>
+            <input type="text" id="eventDate" placeholder="Enter your Event Date" />
 
-			<div id="volunteer_fields">
+            <label for="websiteURL">URL:
+            </label>
+            <input type="text" id="websiteURL" placeholder="Enter your Website URL" />
 
+            <label for="hostName">Host name:
+            </label>
+            <input type="text" id="hostName" placeholder="Host Name" />
+            <br>
+            
+            <button onclick="userInputs()">Submit</button>
 
-			</div>
+            </form>
+    </section>
 
-			<div id="event_information">
+    <article id="placeholderContent">
+    </article>
+    <br>
+    <footer>This events site is for IT3215 tasks.
+    </footer>
 
-				<h2>Event Information</h2>
-                
-				<label for="organizationName">Organization name:</label>
-				<input type="text" id="organizationName" placeholder="Enter your Organization Name" />
-
-				<label for="eventDate">Event Date:</label>
-				<input type="text" id="eventDate" placeholder="Enter your Event Date" />
-
-				<label for="websiteURL">URL:</label>
-				<input type="text" id="websiteURL" placeholder="Enter your Website URL" />
-
-				<label for="hostName">Host name:</label>
-				<input type="text" id="hostName" placeholder="Host Name" />
-				<br>
-
-				<input type="button" id="add_button" value="Submit" onclick="addVolunteer();">
-
-			</div>
-
-		</form>
-
-		<hr>
-		<div id="placeholderContent">
-
-		</div>
-	</section>
-	<br>
-	<footer>
-		This events site is for IT3215 tasks.
-	</footer>
-	<script type="text/javascript" src="js/volunteers.js"></script>
 </body>
 </html>

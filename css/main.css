@@ -3,7 +3,7 @@ body {
     color: #808080;
 }
 input[type=text],
-select ,input[type=password],radio, textarea{
+select ,input[type=password],radio{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -112,10 +112,10 @@ ul.topnav li.right {
     margin: auto
 }
 footer {
-    /*position: absolute;*/
+    /*position: absolute;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0; */
     padding: 1rem;
     background-color: #efefef;
     text-align: center;
@@ -146,21 +146,20 @@ div.desc {
 	height:280px;
 }
 
-.over{
+/* mouseover and firstplace for Assessment 3 */
+.mouseover{
 	width:300px !important;
 	z-index:1000 !important;
 	position: absolute;
 	margin-left:-60px;
 }
 
-.first{
+.firstplace{
 	margin-left:0;
 }
 
-.separator{
-	margin-top:10px;
-}
+/* for Assessment 4 */
 
-hr{
-	color:gray;
+div.last-section-form{
+    margin-top: 20px;
 }

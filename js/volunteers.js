@@ -6,51 +6,58 @@ var $ = function (id){
 // initializes array to hold names of volunteers
 var volunteerArray = [];
 
+// const makeVolunteerEntries = () => {
+//     console.log("Testing function works!");
+// }
+
+// initialized when user hits 'enter' in Number of Volunteers field.
 var addFields = function () {
-    var numFields = document.getElementById("numOfVolunteers").value;
-    var htmlField = "<h2>Volunteers List</h2>";
-    for (i = 0; i < numFields; i++) {
-        htmlField += '<label for="volunteerName">Volunteer\'s name:</label><input type="text" class="volunteerName"></br>';
+    //grabs value entered as a string from a text field
+    var numFields = $("numOfVolunteers").value;
+    //converts the string into a number
+    numFields = parseInt(numFields);
+    // IF statements to prevent incorrect user inputs
+    if (numFields <= 0 || isNaN(numFields)) {
+        alert("Please enter an amount from 1 - 10.");
+        $("numOfVolunteers").focus();
+        return;
     }
-    htmlField += '<hr>';
+    if (numFields > 10) {
+        alert("Limit the entries to no more than 10.");
+        $("numOfVolunteers").focus();
+        return;
+    }
+    // creates the fields where users will input names
+    var htmlField = "";
+    for (let i = 0; i < numFields; i++) {
+        htmlField += ` <label>Volunteer's name:
+                        <input type="text" id="v_${i}" class="volunteerName"></label>`;
+    }
+    // places the user input formula onto the page at id "volunteer_fields"
     $("volunteer_fields").innerHTML = htmlField;
 
      // clears the form to get the add form ready for next entry
      $("numOfVolunteers").value = "";
+     $("v_0").focus();
 };
-
-
-var addVolunteer = function () {
-    // creates new variable with first and last name entries from form added together
-    var volunteerNames = document.getElementsByClassName("volunteerName");
-    
-    // stores in the array
-    for (i = 0; i < volunteerNames.length; i++) {
-        volunteerArray.push(volunteerNames[i].value);
-    }
-
-    userInputs();
-   
-    
-  };
-
-
-
 // takes members of the array and pushes html to the page 
 // html is a form inviting volunteers to an event
 function userInputs(){
 
     // takes values from the form fields in "Event Information" and assigns to variables
-    var orgName = $("organizationName").value;
-    var date = $("eventDate").value;
-    var url = $("websiteURL").value;
-    var host = $("hostName").value;
+    let orgName = $("organizationName").value;
+    let date = $("eventDate").value;
+    let url = $("websiteURL").value;
+    let host = $("hostName").value;
 
     var html = "";
-    // alternative: for (i = volunteerArray.length-1; i >= 0; i--) {
-    // loops through array and on every element it performs the function
-    for (recipientName of volunteerArray) {
+    
+    let vArray = document.querySelectorAll(".volunteerName");
+
+    //for (recipientName of volunteerArray) {
+    for (let e of vArray) {
         
+        let recipientName = e.value;
         // creates html message & inserts variables from the form
         html += `<p>Hello ${recipientName}!
         <br/>
@@ -58,32 +65,22 @@ function userInputs(){
         <br/>
         <br/> Thanks!
         ${host}</p><br><br>`;
-                    
+            
     }
 
     // tells where to place the html -- into DOM id "placeholderContent"
     $("placeholderContent").innerHTML = html;
-
-    // clears the form to get the form ready for next entry
-    $("organizationName").value = "";
-    $("eventDate").value = "";
-    $("websiteURL").value = "";
-    $("hostName").value = "";
-    $("numOfVolunteers").focus();
 }
 
-// when page is fully loaded
+// when page is fully loaded, the buttons will be mapped to Javascript functions
 window.onload = function () {
     
+    // Clear all fields on page load
+    let textInputArray = document.querySelectorAll("input[type=text]");
+    //console.log(textInputArray);
+
+    for (let e of textInputArray) {
+        e.value = "";
+    }
     $("numOfVolunteers").focus();
 }
-
-//This Field is where I execute the 'Add input Field' button with the Enter key
-var input = document.getElementById("numOfVolunteers");
-input.addEventListener("keyup",function(event) {
-    //Number 13 is the ENTER key
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("add_fields").click();
-    }
-});
