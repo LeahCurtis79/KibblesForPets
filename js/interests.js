@@ -29,9 +29,9 @@ function saveData() {
 	setCookie('email', document.getElementById('email').value, 30);
 	setCookie('phone', document.getElementById('phone').value, 30);
 	
-	setCookie('interestMusic', document.getElementById('interestPitbulls').checked, 30);
-	setCookie('interestSports', document.getElementById('interestLabs').checked, 30);
-	setCookie('interestComputers', document.getElementById('interestMastiffs').checked, 30);
+	setCookie('interestPitbulls', document.getElementById('interestPitbulls').checked, 30);
+	setCookie('interestLabs', document.getElementById('interestLabs').checked, 30);
+	setCookie('interestMastiffs', document.getElementById('interestMastiffs').checked, 30);
 	setCookie('signUpNewsletterYes', document.getElementById('signUpYes').checked, 30);
 	setCookie('signUpNewsletterNo', document.getElementById('signUpNo').checked, 30);
 	setCookie('comments', document.getElementById('comments').value, 30);
