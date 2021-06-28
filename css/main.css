@@ -3,7 +3,7 @@ body {
     color: #808080;
 }
 input[type=text],
-select ,input[type=password],radio{
+select ,input[type=password],radio, textarea{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -112,10 +112,10 @@ ul.topnav li.right {
     margin: auto
 }
 footer {
-    /*position: absolute;
+    /*position: absolute;*/
     right: 0;
     bottom: 0;
-    left: 0; */
+    left: 0;
     padding: 1rem;
     background-color: #efefef;
     text-align: center;

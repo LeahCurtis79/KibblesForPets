@@ -27,42 +27,43 @@
         </nav>
     </header>
     <section id="pageForm">
-        <form action="index.html" onsubmit="validate(event)">
+        <form action="interests.html" onsubmit="validate(event)">
             <label for="userName">Username:</label>
-            <input id="userName" type="text" name="userName" placeholder="Enter your Username using numbers and letters." onblur="validatUserName(event)"/>
+            <!--<input id="userName" type="text" name="userName" placeholder="Enter your Username using numbers and letters." onblur="clearError(this)"/>-->
+			<input id="userName" type="text" name="userName" placeholder="Enter your Username using numbers and letters." />
 
             <label for="Password">Password:
             </label>
-            <input id="password" type="password" name="password" placeholder="Minimum 8 characters." onblur="validatePassword(event)" />
+            <input id="password" type="password" name="password" placeholder="Minimum 8 characters." />
 
             <label for="passwordVerify">Verify your Password:
             </label>
-            <input id="passwordVerify" type="password" name="passwordVerify" onblur="validateVerifyPassword(event)" placeholder="Passwords must match." />
+            <input id="passwordVerify" type="password" name="passwordVerify" placeholder="Passwords must match." />
 
             <label for="firstName">First Name:
             </label>
-            <input id="firstName" type="text" name="firstName" placeholder="Enter your First Name" onblur="validateFirstName(event)" />
+            <input id="firstName" type="text" name="firstName" placeholder="Enter your First Name" />
 
             <label for="hostName">Last Name:
             </label>
-            <input id="lastName" type="text" name="lastName" placeholder="Enter your Last Name" onblur="validateLastName(event)" />
+            <input id="lastName" type="text" name="lastName" placeholder="Enter your Last Name" />
             <label for="email">Email:
             </label>
-            <input id="email" type="text" name="email" placeholder="Must be same number of characters as XXX@XXX.XXX" onblur="validateEmail(event)" />
+            <input id="email" type="text" name="email" placeholder="Must be same number of characters as XXX@XXX.XXX" />
 			<label for="phoneNumber">Phone Number
             </label>
-            <input id="phoneNumber" type="text" name="phoneNumber" placeholder="Use the form (###) ###-####." onblur="validatePhone(event)" style="margin-bottom: 20px;" />
-			<label for="signUpNewsletter">Sign up for newsletter:
+            <input id="phoneNumber" type="text" name="phoneNumber" placeholder="Use the form (###) ###-####." style="margin-bottom: 20px;" />
+			<!--<label for="signUpNewsletter">Sign up for newsletter:
             </label>
             <div class="last-section-form">
-                <input type="radio" name="signUpNewsletter" value="Yes"> Yes 
-				<input type="radio" name="signUpNewsletter" value="No"> No
+                <input type="radio" name="signUpNewsletter" value="Yes" selected> Yes 
+				<input type="radio" name="signUpNewsletter" value="No"> No -->
             <input type="submit" value="Next step">
-            </div>
+            <!--</div>-->
 
         </form>
     </section>
-
+	<footer>This events site is for IT-FP3215 tasks.</footer>
 
     <script src="js/registration.js"></script>
 </body>
