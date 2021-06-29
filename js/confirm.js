@@ -8,9 +8,9 @@ window.onload = function() {
 	document.getElementById('email').value = getCookie('email');
 	document.getElementById('phone').value = getCookie('phone');
 	
-	document.getElementById('interestMusic').checked = getCookie('interestMusic');
-	document.getElementById('interestSports').checked = getCookie('interestSports');
-	document.getElementById('interestComputers').checked = getCookie('interestComputers');
+	document.getElementById('interestPitbulls').checked = getCookie('interestPitbulls');
+	document.getElementById('interestLabs').checked = getCookie('interestLabs');
+	document.getElementById('interestMastiffs').checked = getCookie('interestMastiffs');
 	document.getElementById('signUpYes').checked = getCookie('signUpNewsletterYes');
 	document.getElementById('signUpNo').checked = getCookie('signUpNewsletterNo');
 	document.getElementById('comments').value = getCookie('comments');
